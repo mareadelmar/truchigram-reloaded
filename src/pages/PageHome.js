@@ -1,31 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "wouter";
 import useUserData from "../hooks/useUserData";
-import insta from "../instashot.png";
+import insta from "../assets/statics/instashot.png";
 
 const PageHome = () => {
-    const [password, setPassword] = useState(null);
-    const { userData, setUserData, userLogged, loguearConGoogle } =
-        useUserData();
+    const { userLogged, loguearConGoogle } = useUserData();
     const [, pushLocation] = useLocation();
 
     const handleAuth = () => {
         console.log("login");
         loguearConGoogle();
-        //.then((user) => console.log(user));
     };
 
     useEffect(() => {
         if (userLogged) {
             pushLocation("/feed");
         }
-    }, [userLogged]);
+    }, [userLogged, pushLocation]);
 
     return (
-        <div className="container vh100">
-            <div className="row ">
+        <section className="container">
+            <div className="row">
                 <div className="col m4 l5 offset-l1 off">
-                    <img alt="" src={insta} />
+                    <img alt="bienvenida" src={insta} />
                 </div>
                 <div className="col m3 l3 top120">
                     <div className="card">
@@ -46,7 +43,7 @@ const PageHome = () => {
                                 resulta para arrancar a crear.
                             </p>
                         </div>
-                        <div className="card-action right-align">
+                        <div className="card-action center-align">
                             <button
                                 className="waves-effect waves-light btn"
                                 onClick={handleAuth}
@@ -57,7 +54,7 @@ const PageHome = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

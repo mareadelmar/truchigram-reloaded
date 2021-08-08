@@ -17,7 +17,7 @@ img {
 }
 
 .top120 {
-    margin-top: 120px;
+    margin-top: 120px !important;
 }
 
 .flex {
@@ -50,6 +50,7 @@ img {
 
 .title-container h1 {
     font-size: 20px;
+    margin-left: 0.5em;
 }
 
 .pic-container {

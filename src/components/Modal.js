@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useUserData from "../hooks/useUserData";
 import M from "materialize-css";
-import { storage, database } from "../settings/firebase-config";
+import { uploadPost } from "../services/uploadPost";
 
 const Modal = () => {
     const { userData } = useUserData();
@@ -27,33 +27,15 @@ const Modal = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // imagen a storage
-        console.log(postFile);
-        const storageRef = storage.ref(`fotos/${postFile.name}`);
-        const task = storageRef.put(postFile);
 
-        // post a database
-        task.then(() => {
-            const record = {
-                avatar: userData.photoURL,
-                nombre: userData.displayName,
-                txt: postText,
-                pic: storageRef.fullPath,
-            };
-
-            const dbRef = database.ref("pictures");
-            const newPicture = dbRef.push();
-            newPicture.set(record);
-        }).catch((err) => {
-            console.error(err);
-        });
+        uploadPost({ postFile, postText, userData });
     };
 
     return (
         <div>
             <a
                 href="#modal1"
-                className="btn-floating btn-large waves-effect waves-light modal-trigger red FAB"
+                className="btn-floating btn-large waves-effect waves-light modal-trigger purple FAB"
                 id="fab"
             >
                 <i className="material-icons">add</i>

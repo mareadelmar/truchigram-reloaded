@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# truchigram con react y firebase
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Deploy: [https://truchi-gram.web.app](https://truchi-gram.web.app).
+
+![](https://raw.githubusercontent.com/mareadelmar/truchigram-reloaded/main/src/assets/statics/truchigram-feed.png)
 
 ## Available Scripts
 

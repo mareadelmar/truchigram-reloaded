@@ -20,7 +20,7 @@ const Post = ({ text, image, avatar, name }) => {
         <>
             <div className="card">
                 <div className="card-content">
-                    <div className="row margin0">
+                    <div className="row margin0 ">
                         <div className="col l1 valign-wrapper">
                             <img
                                 src={avatar}
@@ -28,7 +28,7 @@ const Post = ({ text, image, avatar, name }) => {
                                 className="circle cardPic inline"
                             />
                         </div>
-                        <div className="col s10 l6 valign-wrapper fix-nombre">
+                        <div className="col s8 l6 valign-wrapper fix-nombre">
                             <p className="inline cardName">{name}</p>
                         </div>
                     </div>

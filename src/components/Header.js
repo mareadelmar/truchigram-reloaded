@@ -26,15 +26,15 @@ const Header = () => {
         <div className="nav valign-wrapper">
             <div className="container">
                 <div className="row  margin0">
-                    <div>
-                        <div className="col s2 l1  right-align flex">
+                    <div className="">
+                        <div className="col s2 l1  right-align flex header">
                             <img src={logo} alt="logo" className="logo" />
                         </div>
-                        <div className="col s3 l1 flex title-container">
-                            <h1 className="margin0">Truchigram</h1>
+                        <div className="col s3 l1 flex header title-container">
+                            <h1 className="">truchigram</h1>
                         </div>
                     </div>
-                    <div className="col s2 l1 offset-s5 offset-l7 right-align flex">
+                    <div className="col s2 l1 offset-s5 offset-l7 right-align flex header">
                         <ul id="dropdown2" className="dropdown-content">
                             <li>
                                 <a onClick={handleLogout} href="/">
